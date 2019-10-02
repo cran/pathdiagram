@@ -1,6 +1,6 @@
 # `"pathdiagram"`
 
-`pathdiagram` provides simple functions to draw basic PLS path diagrams in [R](http://www.r-project.org/), just for illustrating purposes (i.e. adding diagrams when writing reports with `knitr` or `Sweave`).
+`pathdiagram` provides simple functions to draw basic PLS path diagrams in [R](https://www.r-project.org/), just for illustrating purposes (i.e. adding diagrams when writing reports with `knitr` or `Sweave`).
 
 
 ## Motivation
@@ -10,7 +10,7 @@ The one and only reason to create `pathdiagram` was the need to plot a <a href="
 
 ## Installation
 
-Stable version on [CRAN](http://cran.r-project.org/web/packages/pathdiagram/index.html)
+Stable version on [CRAN](https://cran.r-project.org/package=pathdiagram)
 ```ruby
 # stable version 
 install.packages("pathdiagram")

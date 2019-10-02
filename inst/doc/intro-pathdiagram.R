@@ -1,9 +1,8 @@
-
-## @knitr echo=FALSE, message=FALSE
+## ----echo=FALSE, message=FALSE-------------------------------------------
 library(pathdiagram)
 
 
-## @knitr waffles_pancakes, echo=FALSE
+## ----waffles_pancakes, echo=FALSE----------------------------------------
 # manifest variables
 ingredients = list(
   eggs = manifest("Eggs", x = 0.25, y = 0.8, width = 0.1, height = 0.08),
@@ -17,8 +16,7 @@ ingredients = list(
 pancakes = latent("Pancakes", x = 0.8, y = 0.65, rx = 0.08, ry = 0.06)
 waffles = latent("Waffles", x = 0.8, y = 0.35, rx = 0.08, ry = 0.06)
 
-
-## @knitr waf_pan_diag, fig.cap='example of a path diagram', fig.width=6, fig.height=4, out.width='.8\\linewidth', out.height='.5\\linewidth', fig.align='center', fig.pos='h', echo=FALSE
+## ----waf_pan_diag, fig.cap='example of a path diagram', fig.width=6, fig.height=4, out.width='.8\\linewidth', out.height='.5\\linewidth', fig.align='center', fig.pos='h', echo=FALSE----
 # open a new wall
 op = par(mar = rep(0.5, 4))
 wall(xlim=c(0.1, 0.9), ylim=c(.15,.85))
@@ -38,18 +36,15 @@ arrow(from = ingredients[[i]], to = waffles, start = "east", end = "west")
 }
 par(op)
 
+## ----eval=FALSE----------------------------------------------------------
+#  # installation
+#  install.packages("pathdiagram")
 
-## @knitr eval=FALSE
-## # installation
-## install.packages("pathdiagram")
+## ----eval=FALSE----------------------------------------------------------
+#  # load pathdiagram
+#  library(pathdiagram)
 
-
-## @knitr eval=FALSE
-## # load pathdiagram
-## library(pathdiagram)
-
-
-## @knitr manifest_variables, tidy=FALSE
+## ----manifest_variables, tidy=FALSE--------------------------------------
 # manifest variables
 ingredients = list(
   eggs = manifest("Eggs", x = 0.25, y = 0.8, width = 0.1, height = 0.08),
@@ -59,14 +54,12 @@ ingredients = list(
   butter = manifest("Butter", x = 0.25, y = 0.2, width = 0.1, height = 0.08)
 )
 
-
-## @knitr latent_variables
+## ----latent_variables----------------------------------------------------
 # latent variables
 pancakes = latent("Pancakes", x = 0.8, y = 0.65, rx = 0.08, ry = 0.06)
 waffles = latent("Waffles", x = 0.8, y = 0.35, rx = 0.08, ry = 0.06)
 
-
-## @knitr diagram1, fig.width=6, fig.height=4, out.width='.8\\linewidth', out.height='.5\\linewidth', fig.align='center', echo=-c(1,11)
+## ----diagram1, fig.width=6, fig.height=4, out.width='.8\\linewidth', out.height='.5\\linewidth', fig.align='center', echo=-c(1,11)----
 op = par(mar = rep(0.5, 4))
 # open a new wall
 wall(xlim = c(0.1, 0.9), ylim = c(0.1, 0.9))
@@ -81,16 +74,14 @@ for (i in 1:5) {
 }
 par(op)
 
+## ----add_arrows, eval=FALSE----------------------------------------------
+#  # arrows
+#  for (i in 1:5) {
+#  arrow(from = ingredients[[i]], to = pancakes, start = "east", end = "west")
+#  arrow(from = ingredients[[i]], to = waffles, start = "east", end = "west")
+#  }
 
-## @knitr add_arrows, eval=FALSE
-## # arrows
-## for (i in 1:5) {
-## arrow(from = ingredients[[i]], to = pancakes, start = "east", end = "west")
-## arrow(from = ingredients[[i]], to = waffles, start = "east", end = "west")
-## }
-
-
-## @knitr diagram2, echo=FALSE, fig.width=6, fig.height=4, out.width='.8\\linewidth', out.height='.5\\linewidth', fig.align='center', echo=FALSE
+## ----diagram2, echo=FALSE, fig.width=6, fig.height=4, out.width='.8\\linewidth', out.height='.5\\linewidth', fig.align='center', echo=FALSE----
 op = par(mar = rep(0.5, 4))
 # open a new wall
 wall(xlim=c(0.1, 0.9), ylim=c(.1,.9))
@@ -110,8 +101,7 @@ arrow(from = ingredients[[i]], to = waffles, start = "east", end = "west")
 }
 par(op)
 
-
-## @knitr barcelona_blocks, tidy=FALSE
+## ----barcelona_blocks, tidy=FALSE----------------------------------------
 # define Attack block
 attack = list(
   att1 = manifest("Messi", x=0.15, y=0.9, width=0.09, height=0.08, fill="#d199a4"),
@@ -133,8 +123,7 @@ success = list(
   suc3 = manifest("2010-2011", x=0.85, y=0.35, width=0.14, height=0.08, fill="gold2"))
 SUCCESS = latent("SUCCESS", x=0.65, y=0.5, rx=0.08, ry=0.07, fill="gold2", font=1)
 
-
-## @knitr barcelona_pathdiagram, fig.cap='FC Barcelona path diagram', fig.width=8, fig.height=4, out.width='.9\\linewidth', out.height='.55\\linewidth', fig.align='center', fig.pos='h', echo=-c(1,16)
+## ----barcelona_pathdiagram, fig.cap='FC Barcelona path diagram', fig.width=8, fig.height=4, out.width='.9\\linewidth', out.height='.55\\linewidth', fig.align='center', fig.pos='h', echo=-c(1,16)----
 op = par(mar = rep(0.5, 4))
 # open plot window
 wall(ylim=c(0.1, 0.9))
@@ -159,8 +148,7 @@ arrow(from=ATTACK, to=SUCCESS, start="east", end="west", col="#d199a4")
 arrow(from=DEFENSE, to=SUCCESS, start="east", end="west", col="#a0bee1")
 par(op)
 
-
-## @knitr Gryffindor_blocks, tidy=FALSE
+## ----Gryffindor_blocks, tidy=FALSE---------------------------------------
 # Gryffindor block
 gryff = list(
   harry = manifest("Harry \nPotter", x=0.15, y=0.8, width=0.12, height=0.08, 
@@ -184,8 +172,7 @@ gryff = list(
   rubeus = manifest("Rubeus\nHagrid", x=0.15, y=0.2, width=0.12, height=0.08, 
     cex=0.8, fill="#f2d22e", col="#7c4f87", family="serif"))
 
-
-## @knitr Slytherin_blocks, tidy=FALSE
+## ----Slytherin_blocks, tidy=FALSE----------------------------------------
 # Slytherin block
 slyth = list(
   tom = manifest("Tom\nRiddle", x=0.85, y=0.8, width=0.12, height=0.08, 
@@ -209,8 +196,7 @@ slyth = list(
   horace = manifest("Horace\nSlughorn", x=0.85, y=0.2, width=0.12, height=0.08, 
     cex=0.8, fill="gray70", col="#467d70", family="serif"))
 
-
-## @knitr Gry_Sly, tidy=FALSE
+## ----Gry_Sly, tidy=FALSE-------------------------------------------------
 # latent variables
 gry = latent("Gryffindor", x=0.375, y=0.5, rx=0.07, ry=0.06, cex=0.85, 
     fill="#7c4f87", family="serif")
@@ -218,8 +204,7 @@ gry = latent("Gryffindor", x=0.375, y=0.5, rx=0.07, ry=0.06, cex=0.85,
 sly = latent("Slytherin", x=0.625, y=0.5, rx=0.07, ry=0.06, cex=0.85, 
     fill="#467d70", family="serif")
 
-
-## @knitr harry_potter_diagram, fig.cap='Gryffindor vs Slytherin path diagram', fig.width=6.5, fig.height=4.5, out.width='.9\\linewidth', out.height='.63\\linewidth', fig.align='center', fig.pos='h', echo=c(-1,-7)
+## ----harry_potter_diagram, fig.cap='Gryffindor vs Slytherin path diagram', fig.width=6.5, fig.height=4.5, out.width='.9\\linewidth', out.height='.63\\linewidth', fig.align='center', fig.pos='h', echo=c(-1,-7)----
 op = par(mar = rep(0.5, 4))
 # open plot window
 wall(xlim=c(0.1, 0.9), ylim=c(0.15, 0.85))
@@ -245,8 +230,7 @@ for (i in 1:7)
 }
 par(op)
 
-
-## @knitr my_model_blocks, tidy=FALSE
+## ----my_model_blocks, tidy=FALSE-----------------------------------------
 # latent variables
 optimism = latent("Optimism", x=0.35, y=0.75, rx=0.08, ry=0.06, 
                   fill="gray90", col="#1B9E77", font=1)
@@ -269,8 +253,7 @@ achievement = latent("Achievement", x=0.8, y=0.5, rx=0.10, ry=0.075,
 luck = latent("Luck", x=0.85, y=0.7, rx=0.065, ry=0.06, 
               fill="gray90", col="#E6AB02", font=1)
 
-
-## @knitr my_model_diagram, fig.cap='Personal Achievement Model path diagram', fig.width=8, fig.height=4, out.width='.9\\linewidth', out.height='.55\\linewidth', fig.align='center', fig.pos='h', echo=-c(1,21)
+## ----my_model_diagram, fig.cap='Personal Achievement Model path diagram', fig.width=8, fig.height=4, out.width='.9\\linewidth', out.height='.55\\linewidth', fig.align='center', fig.pos='h', echo=-c(1,21)----
 op = par(mar = rep(0.5, 4))
 # open wall to plot
 wall(ylim = c(0.15, 0.85))
@@ -293,8 +276,7 @@ arrow(from=work, to=achievement, start="east", end="west", col="gray90")
 arrow(from=luck, to=achievement, start="south", end="north", col="gray90")
 par(op)
 
-
-## @knitr block1, tidy=FALSE
+## ----block1, tidy=FALSE--------------------------------------------------
 # Block 1
 X1 = list(
   x11 = manifest(expression(x[11]), x=0.4, y=0.9, width=0.06, height=0.06, 
@@ -364,8 +346,7 @@ X5 = list(
 LV5 = latent(expression(xi[5]), x=0.8, y=0.4, rx=0.06, ry=0.06, 
              cex=1.2, fill="gray50")
 
-
-## @knitr formal_diagram, fig.cap='Formal Notation Model path diagram', fig.width=6.5, fig.height=4, out.width='.9\\linewidth', out.height='.6\\linewidth', fig.align='center', fig.pos='h', echo=-c(1,32)
+## ----formal_diagram, fig.cap='Formal Notation Model path diagram', fig.width=6.5, fig.height=4, out.width='.9\\linewidth', out.height='.6\\linewidth', fig.align='center', fig.pos='h', echo=-c(1,32)----
 op = par(mar = rep(0.5, 4))
 # open plot window
 wall(xlim=c(0, 1), ylim=c(0.05, 0.95))
@@ -413,5 +394,4 @@ arrow(from=LV2, to=LV4, start="east", end="north", col="gray80")
 arrow(from=LV3, to=LV4, start="east", end="south", col="gray80")
 arrow(from=LV4, to=LV5, start="east", end="west", col="gray80")
 par(op)
-
 

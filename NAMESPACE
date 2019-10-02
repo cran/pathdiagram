@@ -3,3 +3,7 @@ export(draw)
 export(latent)
 export(manifest)
 export(wall)
+
+importFrom("graphics", "arrows", "plot.new", "plot.window", "rect",
+           "text")
+importFrom("shape", "plotellipse")
